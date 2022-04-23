@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  go_api:
+    container_name: go_api
+    hostname: go_api
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: go-api
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+        - /media/gabriel/Linux/databases/postgresql:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
